@@ -10,3 +10,10 @@ users = [{"id": 1, "nom": "Andry", "age": 23},
 @app.get('/users')
 def get_all_users():
     return {"data": users, "msg": "displayed successfully", "code": 200}
+
+@app.get('/users/{user_id}')
+def get_user_by_id(user_id: int):
+    user = next((u for u in users if u["id"] == user_id), None)
+    if user:
+        return {"data": user, "msg": "user found", "code": 200}
+    return {"data": None, "msg": "user not found", "code": 404}
