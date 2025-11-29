@@ -6,4 +6,4 @@ services:
       context: .
     container_name: users_api
     image: mendrika71/user_management
-    ports: [8000:8000]
+    ports: [8080:8080]
