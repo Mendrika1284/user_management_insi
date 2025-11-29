@@ -7,7 +7,7 @@ users = [{"id": 1, "nom": "Andry", "age": 23},
          {"id": 3, "nom": "Sarah", "age": 20},
 ]
 
-@app.get('/users')
+@app.get('/')
 def get_all_users():
     return {"data": users, "msg": "displayed successfully", "code": 200}
 
